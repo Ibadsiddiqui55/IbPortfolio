@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio website for Muhammad Ibad Siddiqui, BS Computer Science student and full stack developer.">
+  <title>Muhammad Ibad Siddiqui | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" data-header>
+    <a class="brand" href="#home" aria-label="Muhammad Ibad Siddiqui home">
+      <span class="brand-mark">MI</span>
+      <span class="brand-text">Muhammad Ibad</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" data-nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Portfolio introduction">
+      <img class="hero-cover" src="assets/linkedin-cover.jpg" alt="LinkedIn cover artwork for Muhammad Ibad Siddiqui">
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <img class="profile-photo" src="assets/profile.jpg" alt="Portrait of Muhammad Ibad Siddiqui">
+        <p class="eyebrow">BSCS student at Bahria University</p>
+        <h1>Muhammad Ibad Siddiqui</h1>
+        <p class="hero-lede">
+          Full stack developer in training with hands-on work across Java, C++, Python,
+          JavaScript, databases, GUI systems, and EMU8086 assembly projects.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View projects</a>
+          <a class="button button-secondary" href="assets/CV_Ibad_5thSem.docx" download>Download CV</a>
+        </div>
+        <div class="hero-meta" aria-label="Profile highlights">
+          <span>Karachi, Pakistan</span>
+          <span>Open to internships</span>
+          <span>500+ LinkedIn connections</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-band" id="about">
+      <div class="section-inner split-layout">
+        <div class="section-copy reveal">
+          <p class="eyebrow">About</p>
+          <h2>Software engineering foundations with a practical build-first mindset.</h2>
+          <p>
+            I am a Computer Science student passionate about software development,
+            databases, and emerging technologies. My work combines object-oriented
+            programming, GUI-based application development, database-backed systems,
+            assembly language, and web projects.
+          </p>
+          <p>
+            I enjoy turning coursework and competition ideas into working systems:
+            calculators at the hardware-near level, role-based simulators, and deployed
+            web applications built with project management discipline.
+          </p>
+        </div>
+        <div class="quick-facts reveal" aria-label="Quick profile facts">
+          <div>
+            <strong>3.43</strong>
+            <span>Current CGPA</span>
+          </div>
+          <div>
+            <strong>985</strong>
+            <span>LinkedIn followers</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>Featured projects</span>
+          </div>
+          <div>
+            <strong>2026</strong>
+            <span>Recent competitions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected work</h2>
+          <p>Projects from the CV and LinkedIn profile, focused on systems thinking, database logic, and usable interfaces.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <img src="assets/calculator-preview.jpg" alt="Scientific Calculator EMU8086 menu screen">
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Apr 2026 - Jun 2026</span>
+                <span>Assembly</span>
+              </div>
+              <h3>Scientific Calculator EMU8086</h3>
+              <p>
+                Assembly language calculator with arithmetic, logarithmic, trigonometric,
+                and bitwise operations using lookup tables.
+              </p>
+              <ul class="clean-list">
+                <li>Implemented the complete feature logic in EMU8086 assembly.</li>
+                <li>Built as a three-member university project associated with Bahria University.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="assets/curavet-preview.jpg" alt="Curavet web project preview">
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Mar 2026 - May 2026</span>
+                <span>Web + MongoDB</span>
+              </div>
+              <h3>Curavet</h3>
+              <p>
+                Deployed web project built under an industry-style project management
+                hierarchy, with documentation and software project management practices.
+              </p>
+              <ul class="clean-list">
+                <li>Worked with web development, MongoDB, and structured documentation.</li>
+                <li>Created as a practical animal care platform project.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="assets/atm-preview.jpg" alt="ATM Simulator screens for key entry, transaction menu, and slip">
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Feb 2025 - Jun 2025</span>
+                <span>Java JFrame</span>
+              </div>
+              <h3>ATM Simulator</h3>
+              <p>
+                Realistic banking system GUI with database connectivity and secure
+                account verification.
+              </p>
+              <ul class="clean-list">
+                <li>Used Microsoft Access for account storage and PIN validation.</li>
+                <li>Included deposit, withdraw, fast cash, mini slip, and balance inquiry flows.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual code-visual">
+              <span>C++</span>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Sep 2024 - Jan 2025</span>
+                <span>C++</span>
+              </div>
+              <h3>Vending Machine Simulator</h3>
+              <p>
+                Console-based vending machine with persistent text-file storage,
+                role-based access, and practical error handling.
+              </p>
+              <ul class="clean-list">
+                <li>Supported customer, stock manager, and admin roles.</li>
+                <li>Handled password protection, change return, stock control, and invalid input cases.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="skills">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Skills</p>
+          <h2>Technical toolkit</h2>
+          <p>Core skills from the CV plus LinkedIn top skills and project-linked tools.</p>
+        </div>
+        <div class="skills-layout">
+          <div class="skill-group reveal">
+            <h3>Languages</h3>
+            <div class="tag-cloud">
+              <span>C++</span>
+              <span>Java</span>
+              <span>Python</span>
+              <span>JavaScript</span>
+              <span>Assembly</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Development</h3>
+            <div class="tag-cloud">
+              <span>Web Development</span>
+              <span>Back-End Development</span>
+              <span>GUI Development</span>
+              <span>Software Development</span>
+              <span>System Programming</span>
+              <span>OOP</span>
+              <span>DSA</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Databases and tools</h3>
+            <div class="tag-cloud">
+              <span>Microsoft SQL Server</span>
+              <span>Microsoft Access</span>
+              <span>MongoDB</span>
+              <span>Java Swing</span>
+              <span>JFrame</span>
+              <span>Qt</span>
+              <span>EMU8086</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Professional strengths</h3>
+            <div class="tag-cloud">
+              <span>Research</span>
+              <span>Documentation</span>
+              <span>Spreadsheets</span>
+              <span>Database Design</span>
+              <span>Project Management</span>
+              <span>Competitive Programming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Journey</p>
+          <h2>Education, experience, and activities</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div>
+              <p class="timeline-label">Education</p>
+              <h3>Bahria University Karachi Campus</h3>
+              <p>Bachelor's of Computer Science, Computer Science</p>
+              <p class="muted">Sep 2024 - Jul 2028 | Current CGPA: 3.43</p>
+              <p>Activities include Event Management Club, Coder's Clash, and Dev's Day participation.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div>
+              <p class="timeline-label">Experience</p>
+              <h3>Research Intern - Whales College</h3>
+              <p class="muted">Sep 2023 - Nov 2023 | Karachi, Sindh, Pakistan | Hybrid</p>
+              <p>
+                Conducted comparative research and prepared analysis reports on UK
+                universities, including courses, tuition fees, QS ratings, and recommendations.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div>
+              <p class="timeline-label">Achievements</p>
+              <h3>Competitive and campus activities</h3>
+              <ul class="clean-list">
+                <li>Participant - DevDay: Vibe Coding, FAST University, 2026.</li>
+                <li>Participant - Coder's Clash: Vibe Coding, Bahria University, 2026.</li>
+                <li>Participant - Coder's Clash: Speed Programming, Bahria University, 2025.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div>
+              <p class="timeline-label">School</p>
+              <h3>Head Start School System</h3>
+              <p>O Levels: Biology, Chemistry, Physics, and Mathematics</p>
+              <p class="muted">Jul 2017 - Jun 2022 | Grade: 78.5</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-inner contact-layout">
+        <div class="section-copy reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Available for internships, junior roles, and practical project work.</h2>
+          <p>
+            I am open to opportunities in Karachi and remote or hybrid software
+            development roles where I can contribute, learn, and keep building.
+          </p>
+        </div>
+        <div class="contact-panel reveal">
+          <a href="mailto:ibadsiddiqui505@gmail.com">ibadsiddiqui505@gmail.com</a>
+          <a href="tel:+923308797503">+92 330 8797503</a>
+          <a href="https://github.com/Ibadsiddiqui55" target="_blank" rel="noreferrer">github.com/Ibadsiddiqui55</a>
+          <a href="https://www.linkedin.com/in/muhammad-ibad-siddiqui-93921440b" target="_blank" rel="noreferrer">LinkedIn profile</a>
+          <button class="button button-primary" type="button" data-copy-email>Copy email</button>
+          <p class="copy-status" data-copy-status aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> Muhammad Ibad Siddiqui. Built for portfolio presentation.</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
