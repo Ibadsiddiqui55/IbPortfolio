@@ -26,6 +26,20 @@ navLinks.forEach((link) => {
   link.addEventListener("click", closeNav);
 });
 
+// Smooth scroll to target sections without appending hash to the URL
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
