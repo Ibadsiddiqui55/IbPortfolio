@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 84px;
 }
 
 body {
@@ -140,7 +141,6 @@ a {
   background: var(--charcoal);
 }
 
-.hero-cover,
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -148,16 +148,10 @@ a {
   height: 100%;
 }
 
-.hero-cover {
-  object-fit: cover;
-  object-position: center;
-  filter: saturate(0.94) contrast(1.04);
-}
-
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(8, 12, 16, 0.91) 0%, rgba(8, 12, 16, 0.72) 43%, rgba(8, 12, 16, 0.38) 100%),
-    linear-gradient(0deg, rgba(8, 12, 16, 0.82) 0%, rgba(8, 12, 16, 0.18) 52%, rgba(8, 12, 16, 0.45) 100%);
+    radial-gradient(circle at 78% 25%, rgba(15, 143, 131, 0.3), transparent 32%),
+    linear-gradient(120deg, #101419 0%, #17343b 55%, #0b5f5a 100%);
 }
 
 .hero-content {
@@ -169,8 +163,8 @@ a {
 }
 
 .profile-photo {
-  width: clamp(130px, 18vw, 200px);
-  aspect-ratio: 1;
+  width: clamp(160px, 22vw, 260px);
+  height: clamp(160px, 22vw, 260px);
   border: 5px solid rgba(255, 255, 255, 0.92);
   border-radius: 50%;
   object-fit: cover;
@@ -369,6 +363,12 @@ h3 {
 
 .project-card {
   overflow: hidden;
+}
+
+.project-card > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .project-card img,
@@ -645,7 +645,12 @@ h3 {
   }
 
   .hero-content {
+    padding-top: 108px;
     padding-bottom: 54px;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 13vw, 4.2rem);
   }
 
   .hero-actions .button {
@@ -672,6 +677,40 @@ h3 {
   .skill-group,
   .contact-panel {
     padding: 20px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  .hero {
+    min-height: 620px;
+    align-items: center;
+  }
+
+  .hero-content {
+    padding-top: 96px;
+    padding-bottom: 40px;
+  }
+
+  .profile-photo {
+    width: clamp(120px, 24vh, 180px);
+    height: clamp(120px, 24vh, 180px);
+  }
+
+  .hero .eyebrow {
+    margin-top: 16px;
+  }
+
+  .hero-lede {
+    max-width: 620px;
+    margin-top: 14px;
+  }
+
+  .hero-actions {
+    margin-top: 20px;
+  }
+
+  .hero-meta {
+    margin-top: 14px;
   }
 }
 
