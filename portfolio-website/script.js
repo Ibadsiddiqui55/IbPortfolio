@@ -3,24 +3,67 @@ const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const revealItems = document.querySelectorAll(".reveal");
+const introScreen = document.querySelector("[data-intro-screen]");
 const yearTarget = document.querySelector("[data-year]");
 const copyButton = document.querySelector("[data-copy-email]");
 const copyStatus = document.querySelector("[data-copy-status]");
 const email = "ibadsiddiqui505@gmail.com";
+const introStartedAt = performance.now();
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const phoneIntro = window.matchMedia("(max-width: 620px)").matches;
+const introMinDuration = reduceMotion ? 0 : phoneIntro ? 6400 : 5900;
+const introExitDuration = reduceMotion ? 0 : 1050;
+let introDone = false;
 
 function syncHeader() {
-  header.classList.toggle("is-scrolled", window.scrollY > 24);
+  if (header) {
+    header.classList.toggle("is-scrolled", window.scrollY > 24);
+  }
 }
 
 function closeNav() {
-  nav.classList.remove("is-open");
-  navToggle.setAttribute("aria-expanded", "false");
+  if (nav) {
+    nav.classList.remove("is-open");
+  }
+  if (navToggle) {
+    navToggle.setAttribute("aria-expanded", "false");
+  }
 }
 
-navToggle.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("is-open");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-});
+function finishIntro() {
+  if (introDone) {
+    return;
+  }
+
+  introDone = true;
+
+  if (!introScreen) {
+    document.body.classList.remove("intro-active");
+    document.body.classList.add("intro-complete");
+    return;
+  }
+
+  const elapsed = performance.now() - introStartedAt;
+  const remaining = Math.max(introMinDuration - elapsed, 0);
+
+  window.setTimeout(() => {
+    introScreen.classList.add("is-finished");
+    introScreen.setAttribute("aria-hidden", "true");
+
+    window.setTimeout(() => {
+      document.body.classList.remove("intro-active");
+      document.body.classList.add("intro-complete");
+      introScreen.remove();
+    }, introExitDuration);
+  }, remaining);
+}
+
+if (navToggle && nav) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
 
 navLinks.forEach((link) => {
   link.addEventListener("click", closeNav);
@@ -46,10 +89,15 @@ const sections = navLinks
 
 function syncActiveNav() {
   let current = null;
+  const isBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50);
 
-  for (const section of sections) {
-    if (section.offsetTop <= window.scrollY + 140) {
-      current = section;
+  if (isBottom && sections.length > 0) {
+    current = sections[sections.length - 1];
+  } else {
+    for (const section of sections) {
+      if (section.offsetTop <= window.scrollY + 140) {
+        current = section;
+      }
     }
   }
 
@@ -70,19 +118,31 @@ const observer = new IntersectionObserver((entries) => {
 
 revealItems.forEach((item) => observer.observe(item));
 
-copyButton.addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(email);
-    copyStatus.textContent = "Email copied.";
-  } catch (error) {
-    copyStatus.textContent = email;
-  }
-});
+if (copyButton) {
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      if (copyStatus) copyStatus.textContent = "Email copied.";
+    } catch (error) {
+      if (copyStatus) copyStatus.textContent = email;
+    }
+  });
+}
 
-yearTarget.textContent = new Date().getFullYear();
+if (yearTarget) {
+  yearTarget.textContent = new Date().getFullYear();
+}
+
 syncHeader();
 syncActiveNav();
 window.addEventListener("scroll", () => {
   syncHeader();
   syncActiveNav();
 }, { passive: true });
+
+if (document.readyState === "complete") {
+  finishIntro();
+} else {
+  window.addEventListener("load", finishIntro);
+}
+
